@@ -17,8 +17,8 @@ RUN cd /tmp \
   && cd filebeat* \
   && cp filebeat /usr/bin \
   && rm -rf /tmp/filebeat* \
-  && unzip /tmp/fleet_latest.zip 'linux/*' -d /tmp/fleet_linux
-
-COPY /tmp/fleet_linux/linux/fleet /tmp/fleet_linux/linux/fleetctl /usr/bin/
+  && unzip /tmp/fleet_latest.zip 'linux/*' -d /tmp/fleet_linux \
+  && cp /tmp/fleet_linux/linux/fleet /usr/bin/ \
+  && cp /tmp/fleet_linux/linux/fleetctl /usr/bin/
 
 CMD ["fleet", "serve"]
