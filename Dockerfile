@@ -21,4 +21,6 @@ RUN cd /tmp \
   && cp /tmp/fleet_linux/linux/fleet /usr/bin/ \
   && cp /tmp/fleet_linux/linux/fleetctl /usr/bin/
 
-CMD ["fleet", "serve"]
+COPY ./docker-entrypoint.sh /docker-entrypoint.sh
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
