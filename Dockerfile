@@ -6,6 +6,7 @@ ENV FILEBEAT_VERSION=5.1.1 \
     FILEBEAT_SHA1=6e629825010b816b627ac531ddbb50b960bbbcba
 
 RUN apk --update add ca-certificates
+RUN apk add -U unzip && rm -rf /var/cache/apk/*
 
 ADD https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${FILEBEAT_VERSION}-linux-x86_64.tar.gz /tmp/filebeat.tar.gz
 ADD https://dl.kolide.co/bin/fleet_latest.zip /tmp/fleet_latest.zip
