@@ -3,7 +3,7 @@ FROM alpine
 MAINTAINER Niels Højen <niels@hojen.net>
 
 ENV FLEET_VERSION=2.5.0
-ENV FILEBEAT_VERSION=7.6.0
+ENV FILEBEAT_VERSION=7.6.1
 
 RUN apk --update add ca-certificates libc6-compat unzip && rm -rf /var/cache/apk/*
 
